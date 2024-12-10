@@ -1,0 +1,93 @@
+.navbar{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+}
+.navbar-top{
+    width: 100%;
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.navbar .menu{
+    height: 100%;
+    width: 30%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.navbar .menu span{
+    margin-left: 8px;
+}
+.navbar .menu i{
+    font-size: 30px;
+}
+.navbar .login-search button{
+    margin-left: 10px;
+    border: hidden;
+    background: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    height: auto;
+}
+.navbar .login-search button i{
+    color: #000;
+    font-size: 20px;
+}
+.navbar .login-search .link i{
+    color: #000;
+    font-size: 25px;
+}
+.navbar .login-search .link{
+    text-decoration: none;
+    color: #000;
+}
+.navbar .logo{
+    width: 40%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.navbar .logo img{
+    width: auto;
+    object-fit: contain;
+    height: 100%;
+}
+.navbar .login-search{
+    width: 30%;
+    height: 100%;
+    gap: 20px;
+    padding-right: 3%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+}
+.navbar-bottom{
+    background-color: #000;
+    height: 50px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: row;
+}
+.navbar-bottom a{
+    color: #fff;
+    text-decoration: none;
+}
+.navbar-bottom .page-link a{
+    font-size: 14px;
+    text-decoration: none;
+    color: #fff;
+}

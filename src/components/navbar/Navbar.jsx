@@ -20,9 +20,9 @@ const Navbar = () => {
       <img src={logo} alt="" />
     </div>
     <div className='login-search'>
-      <Link className='link'><IoPersonOutline size={26}/></Link>
-      <button><FiSearch size={26}/></button>
-      <button><AiOutlineShopping size={28}/></button>
+      <Link className='link'><IoPersonOutline size={22}/></Link>
+      <button><FiSearch size={22}/></button>
+      <button><AiOutlineShopping size={24}/></button>
     </div>
     </div>
     {/* <div className="navbar-bottom">

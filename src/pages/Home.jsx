@@ -8,16 +8,19 @@ import card4 from "../assets/card-4.jpg"
 import bagvideo from "../assets/bag.mp4"
 import shoevideo from "../assets/shoe.mp4"
 import perfumevideo from "../assets/perfume.mp4"
+import Navbar from '../components/navbar/Navbar'
+import Footer from '../components/Footer'
 
 const Home = () => {
   return (
     <>
-    <div className="flex flex-col md:flex-row h-screen justify-between items-center bg-black">
+    <Navbar/>
+    <div className="flex flex-col md:flex-row md:h-screen h-auto justify-between items-center bg-black">
   <h1 className='md:text-6xl text-3xl h-auto text-center mx-auto text-gray-400 tracking-wider font-normal'>We Believe <br /> We Can All Make <br /> A Stylish For You</h1>
   <img src={hero} alt="" />
     </div>
     <div className="container pt-5 section-1">
-        <h1 className='md:text-4xl text-3xl text-center m-4'>Our Collections</h1>
+        <h1 className='md:text-5xl text-3xl text-center m-2'>Our Collections</h1>
         <p className='text-center w-auto text-gray-500 mx-auto text-lg'>Discover premium bags, shoes, wallets, sandals, and perfumes <br /> crafted for style and functionality—elevate your everyday essentials with elegance.</p>
         <div class="grid p-3 my-5 grid-cols-2 md:grid-cols-4 gap-4">
   <div className='p-3'>
@@ -40,7 +43,7 @@ const Home = () => {
   </div>
   <div className='p-3'>
     <div className='max-w-sm bg-white overflow-hidden'>
-      <img src={card4} alt="" className='w-full mb-3 h-80 object-cover'/>
+      <img src={card4} alt="" className='w-full mb-3 md:h-80 h-40 object-cover'/>
       <h3 className='uppercase text-center border-b-gray-400 pb-1 border-b-2'>SANDALS</h3>
     </div>
   </div>
@@ -48,7 +51,7 @@ const Home = () => {
 </div>
 <div className="container p-5 mt-10">
   <div className="grid md:grid-cols-2 grid-cols-1 gap-5">
-    <div className='bg-hero-pattern flex flex-col justify-between items-center h-screen bg-cover bg-center p-10'>
+    <div className='bg-hero-pattern flex flex-col justify-between items-center md:h-screen h-80 bg-cover bg-center p-10'>
       <button className='bg-gradient-to-r p-3 text-white from-gray-500/50 to-gray-300/50'>WOMEN</button>
      <div className='flex flex-col justify-between items-center'>
        <h1 className='text-center text-white mb-4 md:text-4xl tracking-wide font-light'>Bag for her</h1>
@@ -57,7 +60,7 @@ const Home = () => {
 </button>
       </div>
     </div>
-    <div className='bg-hero-pattern-2 flex flex-col justify-between items-center p-10 h-screen bg-cover bg-center'>
+    <div className='bg-hero-pattern-2 flex flex-col justify-between items-center p-10 md:h-screen h-80 bg-cover bg-center'>
     <button className='bg-gradient-to-r p-3 text-white from-gray-500/50 to-gray-300/50'>MEN</button>
      <div className='flex flex-col justify-between items-center'>
        <h1 className='text-center text-white mb-4 md:text-4xl tracking-wide font-light'>Shoe for him</h1>
@@ -104,6 +107,7 @@ const Home = () => {
     </div>
   </div>
 </div>
+<Footer/>
     </>
   )
 }

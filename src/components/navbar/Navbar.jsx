@@ -10,29 +10,19 @@ import { GrMenu } from "react-icons/gr";
 const Navbar = () => {
   return (
   <>
-  <div className='navbar'>
-    <div className="navbar-top">
-    <div className='menu'>
+  <div className='flex flex-row p-3 md:justify-evenly justify-between items-center h-20'>
+    <div className='flex items-center justify-center gap-2'>
     <GrMenu size={20}/>
     <span>MENU</span>
     </div>
-    <div className='logo'>
-      <img src={logo} alt="" />
+    <div className='flex items-center justify-center h-full'>
+      <img src={logo} alt="" className='h-full object-contain w-auto'/>
     </div>
-    <div className='login-search'>
+    <div className='md:flex flex-row hidden items-center gap-4'>
       <Link className='link'><IoPersonOutline size={22}/></Link>
       <button><FiSearch size={22}/></button>
       <button><AiOutlineShopping size={24}/></button>
     </div>
-    </div>
-    {/* <div className="navbar-bottom">
-      <Link className='page-link'><a href="">HOME</a></Link>
-      <Link className='page-link'><a href="">PRODUCT</a></Link>
-      <Link className='page-link'><a href="">SHOP</a></Link>
-      <Link className='page-link'><a href="">BLOG</a></Link>
-      <Link className='page-link'><a href="">ABOUT</a></Link>
-      <Link className='page-link'><a href="">CONTACT</a></Link>
-    </div> */}
   </div>
   </>
   )

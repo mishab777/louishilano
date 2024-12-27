@@ -9,7 +9,8 @@ import Detailpage from './pages/Detailpage'
 import Login from './auth/Login'
 import Signup from './auth/Signup'
 import Dashboard from './Admin/Dashboard'
-
+import Signupcustomer from './auth/Signupcustomer'
+import Otp from './auth/Otp'
 function App() {
 
   return (
@@ -22,6 +23,9 @@ function App() {
       <Route path='/login' element={<Login/>}/>
       <Route path='/signup' element={<Signup/>}/>
       <Route path='/admin' element={<Dashboard/>}/>
+      <Route path='/signupcustomer' element={<Signupcustomer/>}/>
+      <Route path='/otp' element={<Otp/>}/>
+
     </Routes>
     {/* <Footer/> */}
     </BrowserRouter>

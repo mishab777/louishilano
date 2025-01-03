@@ -11,6 +11,8 @@ import Signup from './auth/Signup'
 import Dashboard from './Admin/Dashboard'
 import Signupcustomer from './auth/Signupcustomer'
 import Otp from './auth/Otp'
+import Customerlogin from './auth/customerlogin'
+import Forgotpassword from './auth/Forgotpassword'
 function App() {
 
   return (
@@ -24,8 +26,9 @@ function App() {
       <Route path='/signup' element={<Signup/>}/>
       <Route path='/admin' element={<Dashboard/>}/>
       <Route path='/signupcustomer' element={<Signupcustomer/>}/>
+      <Route path='/customerlogin' element={<Customerlogin/>}/>
       <Route path='/otp' element={<Otp/>}/>
-
+      <Route path='/forgotpassword' element={<Forgotpassword/>}/>
     </Routes>
     {/* <Footer/> */}
     </BrowserRouter>

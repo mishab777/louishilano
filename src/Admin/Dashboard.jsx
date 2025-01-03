@@ -103,7 +103,7 @@ const Dashboard = () => {
                                 onChange={handleChange}
                                 type="text"
                                 name="sku"
-                                id="name"
+                                id="sku"
                                 className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
                                 placeholder="SKU"
                             />
@@ -111,7 +111,7 @@ const Dashboard = () => {
                                 onChange={handleChange}
                                 type="text"
                                 name="spec"
-                                id="email"
+                                id="spec"
                                 className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
                                 placeholder="Spec"
                             />
@@ -119,7 +119,7 @@ const Dashboard = () => {
                                 onChange={handleChange}
                                 type="text"
                                 name="color"
-                                id="phone"
+                                id="color"
                                 className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
                                 placeholder="Color"
                             />
@@ -127,7 +127,7 @@ const Dashboard = () => {
                                 onChange={handleChange}
                                 type="text"
                                 name="size"
-                                id="password"
+                                id="size"
                                 className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
                                 placeholder="Size"
                             />

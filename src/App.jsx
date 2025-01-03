@@ -9,6 +9,8 @@ import Detailpage from './pages/Detailpage'
 import Login from './auth/Login'
 import Signup from './auth/Signup'
 import Dashboard from './Admin/Dashboard'
+import Cart from './pages/Cart'
+import Checkout from './pages/Checkout'
 
 function App() {
 
@@ -22,6 +24,8 @@ function App() {
       <Route path='/login' element={<Login/>}/>
       <Route path='/signup' element={<Signup/>}/>
       <Route path='/admin' element={<Dashboard/>}/>
+      <Route path='/cart' element={<Cart/>}/>
+      <Route path='/checkout' element={<Checkout/>}/>
     </Routes>
     {/* <Footer/> */}
     </BrowserRouter>

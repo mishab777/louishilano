@@ -9,6 +9,7 @@ export default {
       backgroundImage: {
         'hero-pattern': "url('./src/assets/bag-for-her.jpg')",
         'hero-pattern-2': "url('./src/assets/shoe-for-him.jpg')",
+        'hero-cart': "url('./src/assets/cart-cover.webp')",
       }
     },
   },

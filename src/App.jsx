@@ -9,6 +9,10 @@ import Detailpage from './pages/Detailpage'
 import Login from './auth/Login'
 import Signup from './auth/Signup'
 import Dashboard from './Admin/Dashboard'
+import SidebarNavbar from './pages/AdminPages/SidebarNavbar'
+import AdminHome from './pages/AdminPages/AdminHome'
+import AdminBaseLayout from './pages/Layout/AdminBaseLayout'
+import ProductAdd from './pages/AdminPages/ProductAdd'
 
 function App() {
 
@@ -16,12 +20,18 @@ function App() {
     <BrowserRouter>
     {/* <Navbar/> */}
     <Routes>
+      <Route element={<AdminBaseLayout/>}>
+        <Route path='/admin_home' element={<AdminHome/>}/>
+        <Route path='/product_Add' element={<ProductAdd/>}/>
+      </Route>
+
       <Route path='/' element={<Home/>}/>
       <Route path='/product' element={<Product/>}/>
       <Route path='/detailpage' element={<Detailpage/>}/>
       <Route path='/login' element={<Login/>}/>
       <Route path='/signup' element={<Signup/>}/>
       <Route path='/admin' element={<Dashboard/>}/>
+      
     </Routes>
     {/* <Footer/> */}
     </BrowserRouter>

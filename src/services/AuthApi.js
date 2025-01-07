@@ -28,3 +28,15 @@ export const userLogin = async (data) =>{
     const response = await axiosInstance.post('user_acc/user_login/', data);
     return response.data;
 };   
+export const userLogout = async (data) =>{
+    const response = await axiosInstance.post('user_acc/logout_user/', data);
+    return response.data;
+}; 
+export const forgotPassword = async (data) =>{
+    const response = await axiosInstance.post('user_acc/forgot_password/', data);
+    return response.data; 
+};
+export const resetPassword = async (data) =>{
+    const response = await axiosInstance.post('user_acc/reset_password/',data);
+    return response.data;
+};

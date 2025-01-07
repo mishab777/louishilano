@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-
-const Login = () => {
+import {forgotPassword} from "../services/AuthApi";
+const Forgotpassword = () => {
   const [email, setEmail] = useState('');
   const [error, setError] = useState('');
   const [message, setMessage] = useState('');
@@ -18,11 +18,11 @@ const Login = () => {
     }
 
     try {
-      const response = await userLogin({ email, user_type: "admin" });
+      const response = await forgotPassword({ email});
       setMessage(response.message);
 
       // Navigate to OTP verification page, passing email and user type
-      navigate('/otp', { state: { email, user_type: response.user_type } });
+      navigate('/resetpassword', { state: { email} });
 
     } catch (err) {
       setError(err.response?.data?.error || 'Failed to log in');
@@ -55,4 +55,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Forgotpassword;

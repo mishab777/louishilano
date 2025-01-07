@@ -13,12 +13,22 @@ import Signupcustomer from './auth/Signupcustomer'
 import Otp from './auth/Otp'
 import Customerlogin from './auth/customerlogin'
 import Forgotpassword from './auth/Forgotpassword'
+import SidebarNavbar from './pages/AdminPages/SidebarNavbar'
+import AdminHome from './pages/AdminPages/AdminHome'
+import AdminBaseLayout from './pages/Layout/AdminBaseLayout'
+import ProductAdd from './pages/AdminPages/ProductAdd'
+import Resetpassword from './auth/ResetPassword'
 function App() {
 
   return (
     <BrowserRouter>
     {/* <Navbar/> */}
     <Routes>
+      <Route element={<AdminBaseLayout/>}>
+        <Route path='/admin_home' element={<AdminHome/>}/>
+        <Route path='/product_Add' element={<ProductAdd/>}/>
+      </Route>
+
       <Route path='/' element={<Home/>}/>
       <Route path='/product' element={<Product/>}/>
       <Route path='/detailpage' element={<Detailpage/>}/>
@@ -29,6 +39,7 @@ function App() {
       <Route path='/customerlogin' element={<Customerlogin/>}/>
       <Route path='/otp' element={<Otp/>}/>
       <Route path='/forgotpassword' element={<Forgotpassword/>}/>
+      <Route path='/resetpassword' element={<Resetpassword/>}/>
     </Routes>
     {/* <Footer/> */}
     </BrowserRouter>

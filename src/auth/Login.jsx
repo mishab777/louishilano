@@ -27,7 +27,7 @@ const Login = () => {
       if (response.token) {
         sessionStorage.setItem('authToken', response.token);
       }
-      navigate('/admin', { state: { token: response.token, email, userType: "admin" } });
+      navigate('/product_Add', { state: { token: response.token, email, userType: "admin" } });
     } catch (err) {
       setError(err.response?.data?.error || 'Failed to log in');
     }
@@ -46,7 +46,7 @@ const Login = () => {
                    placeholder='email'
                    onChange={(e) => setEmail(e.target.value)}
             />
-            <input type="text" 
+            <input type="password" 
                    name="password" 
                    id="password" 
                    autoComplete="given-name" 

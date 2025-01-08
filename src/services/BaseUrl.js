@@ -1,9 +1,9 @@
 // src/services/BaseUrl.js
 import axios from 'axios';
 
-// const BASE_URL = 'http://127.0.0.1:8000/api/v1/';
+const BASE_URL = 'http://127.0.0.1:8000/api/v1/';
 
-const BASE_URL = 'https://www.nature-bells-uae.info/api/v1/';
+// const BASE_URL = 'https://www.nature-bells-uae.info/api/v1/';
 
 const axiosInstance = axios.create({
   baseURL: BASE_URL,
@@ -21,4 +21,14 @@ axiosInstance.interceptors.response.use(
   }
 );
 
+
+axiosInstance.interceptors.request.use((config) => {
+  const token = sessionStorage.getItem('authToken'); 
+  if (token) {
+    config.headers.Authorization = `Token ${token}`; // Set Authorization header
+  }
+  return config;
+}, (error) => {
+  return Promise.reject(error);
+});
 export default axiosInstance;

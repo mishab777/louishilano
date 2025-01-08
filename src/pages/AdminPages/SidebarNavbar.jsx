@@ -7,7 +7,8 @@ import { Link } from 'react-router-dom';
 import { Outlet, useNavigate } from 'react-router-dom';
 import hero from "../../assets/lh-logo-1.png"
 import { FaTable } from "react-icons/fa";
-
+// logout api
+import { userLogout } from "../../services/AuthApi";
 const Sidebar = () => {
     // State to control the visibility of the sidebar
     const [isSidebarOpen, setIsSidebarOpen] = useState(true);
@@ -27,7 +28,16 @@ const Sidebar = () => {
     };
 
     const navigate = useNavigate();
-
+    // logout function
+    const handleLogout = async () => {
+        try{
+            await userLogout();
+            sessionStorage.removeItem('authToken');
+            navigate('/login');            
+        }catch(error){
+            console.error('Logout failed:', error.response?.data || error.message);
+        }
+    };     
     return (
         <div className={`flex ${isDarkMode ? "dark" : ""}`}>
             {/* Navbar */}
@@ -175,6 +185,18 @@ const Sidebar = () => {
                                 <div className="flex items-center">
                                     <IoSettingsOutline className="size-7" />
                                     <span className="ml-3">Settings</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                href="#"
+                                onClick={handleLogout}
+                                className="flex items-center p-2 text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg"
+                            >
+                                <div className="flex items-center">
+                                    <IoSettingsOutline className="size-7" />
+                                    <span className="ml-3">Logout</span>
                                 </div>
                             </a>
                         </li>

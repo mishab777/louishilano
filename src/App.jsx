@@ -13,6 +13,7 @@ import SidebarNavbar from './pages/AdminPages/SidebarNavbar'
 import AdminHome from './pages/AdminPages/AdminHome'
 import AdminBaseLayout from './pages/Layout/AdminBaseLayout'
 import ProductAdd from './pages/AdminPages/ProductAdd'
+import ProductList from './pages/AdminPages/ProductList'
 
 function App() {
 
@@ -22,7 +23,9 @@ function App() {
     <Routes>
       <Route element={<AdminBaseLayout/>}>
         <Route path='/admin_home' element={<AdminHome/>}/>
-        <Route path='/product_Add' element={<ProductAdd/>}/>
+        <Route path='/product_Add' element={<ProductAdd mode='add'/>}/>
+        <Route path='/product_Edit/:id' element={<ProductAdd mode='edit'/>}/>
+        <Route path='/product_list' element={<ProductList/>}/>
       </Route>
 
       <Route path='/' element={<Home/>}/>

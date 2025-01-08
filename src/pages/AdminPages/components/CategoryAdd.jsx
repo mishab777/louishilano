@@ -3,7 +3,8 @@ import { FaSquarePlus } from "react-icons/fa6";
 import { postCategory } from '../../../services/Admin/ProductAPI';
 
 
-const CategoryAdd = () => {
+const CategoryAdd = (props) => {
+    const {getCategoryData} = props;
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [values, setValues] = useState({
         name: '',
@@ -48,6 +49,7 @@ const CategoryAdd = () => {
                 // Optionally reset the form
                 setValues({ name: '', sku_prefix: '', sku_start: '' });
                 toggleModal();
+                getCategoryData();
             } else {
                 console.error("API Error:", response);
                 alert(response.message || "Failed to add category");
@@ -111,7 +113,7 @@ const CategoryAdd = () => {
                                 </button>
                             </div>
                             {/* Modal body */}
-                            <form onSubmit={handleSubmit} className="p-4 md:p-5">
+                            <form  className="p-4 md:p-5">
                                 <div className="grid gap-4 mb-4 grid-cols-2">
                                     <div className="col-span-2">
                                         <label
@@ -171,6 +173,7 @@ const CategoryAdd = () => {
                                     </div>
                                 </div>
                                 <button
+                                    onClick={handleSubmit}
                                     type="submit"
                                     className="text-white inline-flex items-center bg-primary/80 hover:bg-primary/95 focus:ring-4 focus:outline-none focus:ring-primary font-medium rounded-lg text-sm px-5 py-1.5 text-center dark:bg-primary dark:hover:bg-primary dark:focus:ring-primary"
                                 >

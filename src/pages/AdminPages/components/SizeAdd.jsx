@@ -1,9 +1,53 @@
 import React from 'react'
 import { FaSquarePlus } from "react-icons/fa6"; 
 import { useState } from 'react'
+import { postSize } from '../../../services/Admin/ProductAPI';
 
-const SizeAdd = () => {
+const SizeAdd = (props) => {
+    const {category, getSizeData} = props; 
     const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const [values, setValues] = useState({
+        name: '',
+        category: '',
+    })
+
+    const handleChange = (e) => {
+        const { name, value} = e.target
+        console.log(name, value)
+        setValues({
+            ...values,
+            [name]: value
+        })
+    }
+
+    const handleSubmit = async (e) => {
+        e.preventDefault()
+        try{
+            const submittedData = {
+                ...values,
+                name: values.name|| '',
+                category: values.category || '',
+            };
+            console.log(submittedData)
+            let response;
+            response = await postSize(submittedData)
+            console.log(response)
+            if (response.success){
+                alert('Size added successfully')
+                setValues({ name: '', category: ''})
+                toggleModal();
+                getSizeData();
+            }
+            else{
+                alert('Failed to add size')
+            }
+        }
+        catch(err){
+            console.log(err)
+        }
+    }
+
 
     const toggleModal = () => {
         setIsModalOpen(!isModalOpen);
@@ -57,7 +101,7 @@ const SizeAdd = () => {
                                 </button>
                             </div>
                             {/* Modal body */}
-                            <form className="p-4 md:p-5">
+                            <form onSubmit={handleSubmit} className="p-4 md:p-5">
                                 <div className="grid gap-4 mb-4 grid-cols-2">
                                     <div className="col-span-2">
                                         <label
@@ -66,11 +110,17 @@ const SizeAdd = () => {
                                         >
                                             Category
                                         </label>
-                                        <select className='w-full rounded-md p-1.5 bg-gray-50 border border-gray-300 text-gray-900' name="" id="">
-                                            <option value="">Option One</option>
-                                            <option value="">Option One</option>
-                                            <option value="">Option One</option>
-                                            <option value="">Option One</option>
+                                        <select className='w-full rounded-md p-1.5 bg-gray-50 border border-gray-300 text-gray-900'
+                                            name="category" id=""
+                                            onChange={handleChange}
+                                            >
+                                            <option value="">Select Category</option>
+                                            {   
+                                                category?.length > 0 &&
+                                                category?.map((cat) => ( 
+                                                    <option key={cat.id} value={cat.id}>{cat.name}</option>
+                                                ))
+                                            }
                                         </select>
                                     </div>
                                 </div>
@@ -86,14 +136,15 @@ const SizeAdd = () => {
                                             type="text"
                                             name="name"
                                             id="name"
-                                            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                                            placeholder="Type product name"
+                                            onChange={handleChange}
+                                            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-1.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                                            placeholder="Type size"
                                             required
                                         />
                                     </div>
                                 </div>
                                 <button
-                                    type="submit"
+                                    onClick={handleSubmit}
                                     className="text-white inline-flex items-center bg-primary/80 hover:bg-primary/95 focus:ring-4 focus:outline-none focus:ring-primary font-medium rounded-lg text-sm px-5 py-1.5 text-center dark:bg-primary dark:hover:bg-primary dark:focus:ring-primary"
                                 >
                                     <svg

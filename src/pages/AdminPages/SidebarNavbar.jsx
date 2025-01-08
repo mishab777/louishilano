@@ -6,6 +6,7 @@ import { IoSettingsOutline } from "react-icons/io5";
 import { Link } from 'react-router-dom';
 import { Outlet, useNavigate } from 'react-router-dom';
 import hero from "../../assets/lh-logo-1.png"
+import { FaTable } from "react-icons/fa";
 
 const Sidebar = () => {
     // State to control the visibility of the sidebar
@@ -132,7 +133,7 @@ const Sidebar = () => {
                         
                             <div className="flex items-center">
                                 <RxDashboard className="size-7" />
-                                <span className="ml-3">Dashboard</span>
+                                <span className="ml-3">Page View</span>
                             </div>
                               
                             </a>
@@ -146,25 +147,25 @@ const Sidebar = () => {
                      
                               <div className="flex items-center">
                                   <BsBoxes className="size-7" />
-                                  <span className="ml-3">Item Master</span>
+                                  <span className="ml-3">Product Add</span>
                               </div>
                                
                             </a>
                         </li>
-{/* 
-                        <li>
+
+                        <li onClick={() => navigate('/product_list')}>
                             <a
                                 href="#"
                                 className="flex items-center p-2 text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg"
                             >
-                                <Link to="/finance">
-                                    <div className="flex items-center">
-                                        <TbCashRegister className="size-7" />
-                                        <span className="ml-3">Finance</span>
-                                    </div>
-                                </Link>
+                                
+                                <div className="flex items-center">
+                                    <FaTable className="size-7"/>
+                                    <span className="ml-3">Product List</span>
+                                </div>
+                           
                             </a>
-                        </li> */}
+                        </li>
                         
                         <li>
                             <a

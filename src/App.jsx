@@ -19,6 +19,9 @@ import AdminBaseLayout from './pages/Layout/AdminBaseLayout'
 import ProductAdd from './pages/AdminPages/ProductAdd'
 import ProductList from './pages/AdminPages/ProductList'
 import Resetpassword from './auth/ResetPassword'
+import Cart from './pages/Cart'
+import Checkout from './pages/Checkout'
+
 function App() {
 
   return (
@@ -43,6 +46,8 @@ function App() {
       <Route path='/otp' element={<Otp/>}/>
       <Route path='/forgotpassword' element={<Forgotpassword/>}/>
       <Route path='/resetpassword' element={<Resetpassword/>}/>
+      <Route path='/cart' element={<Cart/>}/>
+      <Route path='/checkout' element={<Checkout/>}/>
     </Routes>
     {/* <Footer/> */}
     </BrowserRouter>

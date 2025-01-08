@@ -11,6 +11,7 @@ export default {
         primary:"#000000",
         secondary:"#000000",
         gold: "#bfa97c",
+        'hero-cart': "url('./src/assets/cart-cover.webp')",
       }
     },
     container:{

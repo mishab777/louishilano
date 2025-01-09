@@ -9,6 +9,10 @@ import { GrMenu } from "react-icons/gr";
 import { IoCloseCircle } from "react-icons/io5";
 import { IoSearchCircle } from "react-icons/io5";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
+import sandals from '../../assets/card-4.jpg'
+import card1 from '../../assets/card-1.jpg'
+import card2 from '../../assets/card-2.jpeg'
+import card3 from '../../assets/card-3.jpeg'
 
 
 
@@ -93,12 +97,16 @@ const Navbar = () => {
           onMouseLeave={() => setMenDropdownOpen(false)}>
         <a href="" className='font-light flex flex-row items-center'>MEN<MdOutlineKeyboardArrowDown/></a>
           {isMenDropdownOpen && (
-            <div className='absolute bg-white w-auto h-auto'>
-              <div className='w-full flex flex-col items-start justify-center gap-2 p-3'>
-                <a href="" className='text-sm'>CLASSIC COLLECIONS</a>
-                <a href="" className='text-sm'>SANDALS FOR MEN</a>
-                <a href="" className='text-sm'>PERFUME FOR MEN</a>
-                <a href="" className='text-sm'>WALLETS FOR MEN</a>
+            <div className='absolute bg-white h-auto p-5' style={{
+              width: 'auto',
+              left: '50%',
+              transform: 'translateX(-50%)',
+            }}>
+              <div className='w-full flex flex-row items-start justify-center gap-2 p-3'>
+                <div className='w-40 flex items-center flex-col justify-center gap-3'><img src="https://farada.ae/cdn/shop/collections/mens-classic-collections-farada.jpg?v=1721034328" alt="" className='w-full h-36 object-cover' /><a href="" className='text-sm'>CLASSIC COLLECIONS</a></div>
+                <div className='w-40 flex items-center flex-col justify-center gap-3'><img src={sandals} alt="" className='w-full h-36 object-cover' /><a href="" className='text-sm'>SANDALS FOR MEN</a></div>
+                <div className='w-40 flex items-center flex-col justify-center gap-3'><img src={card1} alt="" className='w-full h-36 object-cover' /><a href="" className='text-sm'>PERFUME FOR MEN</a></div>
+                <div className='w-40 flex items-center flex-col justify-center gap-3'><img src={card2} alt="" className='w-full h-36 object-cover' /><a href="" className='text-sm'>WALLETS FOR MEN</a></div>
               </div>
             </div>
           )}
@@ -108,11 +116,15 @@ const Navbar = () => {
           onMouseLeave={() => setLeatheropen(false)}>
         <a href="" className='font-light flex flex-row items-center'>LEATHER GOODS<MdOutlineKeyboardArrowDown/></a>
           {isLeatheropen && (
-            <div className='absolute bg-white w-auto h-auto'>
-              <div className='w-full flex flex-col items-start justify-center gap-2 p-3'>
-                <a href="" className='text-sm'>WALLETS</a>
-                <a href="" className='text-sm'>BAGS</a>
-                <a href="" className='text-sm'>BRACELETS</a>
+            <div className='absolute bg-white h-auto p-5' style={{
+              width: 'auto',
+              left: '50%',
+              transform: 'translateX(-50%)',
+            }}>
+                <div className='w-full flex flex-row items-start justify-center gap-2 p-3'>
+                <div className='w-40 flex items-center flex-col justify-center gap-3'><img src={sandals} alt="" className='w-full h-36 object-cover' /><a href="" className='text-sm'>SANDALS</a></div>
+                <div className='w-40 flex items-center flex-col justify-center gap-3'><img src={card3} alt="" className='w-full h-36 object-cover' /><a href="" className='text-sm'>BAG</a></div>
+                <div className='w-40 flex items-center flex-col justify-center gap-3'><img src={card2} alt="" className='w-full h-36 object-cover' /><a href="" className='text-sm'>WALLET</a></div>
               </div>
             </div>
           )}
